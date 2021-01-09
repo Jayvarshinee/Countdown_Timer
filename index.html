@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timer</title>
     <style>
-      h2,div {
+      div {
         text-align: center;
         width: 100%;
         font-size: 30px;
@@ -14,10 +14,22 @@
         color: #000;
         display:inline-block;
     }
+	    /* Media Query for Mobile Devices */ 
+     @media (max-width: 480px) { 
+            div { 
+               font-size: 10px; 
+            } 
+        } 
+          
+        /* Media Query for low resolution  Tablets, Ipads */ 
+        @media (min-width: 481px) and (max-width: 767px) { 
+            div { 
+                font-size: 10px; 
+            } 
+        } 
   </style>
 </head>
 <body>
-  <h2>Offer Ends in </h2>
   <div id="countdown-timer"></div>
   <script>
 	var date = new Date();
@@ -42,7 +54,7 @@
   	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   	// Output the result in an element with id="demo"
-  	document.getElementById("countdown-timer").innerHTML = days + "d: " + hours + "h: "+ minutes + "m: " + seconds + "s ";
+  	document.getElementById("countdown-timer").innerHTML = "Offer ends in " +days + "d: " + hours + "h: "+ minutes + "m: " + seconds + "s ";
     
   	// If the count down is over, write some text 
   	if (distance < 0) {
